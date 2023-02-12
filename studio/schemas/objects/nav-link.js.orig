@@ -1,0 +1,47 @@
+import { ArrowSquareOut } from 'phosphor-react'
+
+export default {
+  title: 'Link',
+  name: 'navLink',
+  type: 'object',
+  icon: ArrowSquareOut,
+  fields: [
+    {
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      description: 'Display Text'
+    },
+    {
+      title: 'URL',
+      name: 'url',
+      type: 'url',
+<<<<<<< HEAD
+      description: 'enter an external URL'
+=======
+      description: 'enter an external URL',
+      validation: Rule =>
+        Rule.uri({
+          scheme: ['http', 'https', 'mailto', 'tel']
+        })
+>>>>>>> original/main
+    }
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      url: 'url'
+    },
+    prepare({ title, url }) {
+      return {
+<<<<<<< HEAD
+        title: title,
+        subtitle: url
+=======
+        title: title ?? url,
+        subtitle: title && url
+>>>>>>> original/main
+      }
+    }
+  }
+}

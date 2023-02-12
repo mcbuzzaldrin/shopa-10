@@ -1,0 +1,153 @@
+<<<<<<< HEAD
+=======
+import { PaperPlaneTilt, List, GlobeSimple } from 'phosphor-react'
+
+>>>>>>> original/main
+export default {
+  title: 'Footer Settings',
+  name: 'footerSettings',
+  type: 'document',
+<<<<<<< HEAD
+  // __experimental_actions: ['update', 'publish'], // disable for initial publish
+  fieldsets: [
+    {
+      title: 'Block One',
+      name: 'footerBlock1',
+      description: 'Settings for the first footer block',
+      options: { collapsible: true }
+    },
+    {
+      title: 'Block Two',
+      name: 'footerBlock2',
+      description: 'Settings for the second footer block',
+      options: { collapsible: true }
+    },
+    {
+      title: 'Block Three',
+      name: 'footerBlock3',
+      description: 'Settings for the third footer block',
+      options: { collapsible: true }
+    },
+    {
+      title: 'Block Four',
+      name: 'footerBlock4',
+      description: 'Settings for the fourth footer block',
+      options: { collapsible: true }
+=======
+  groups: [
+    {
+      title: 'Block 1',
+      name: 'column1',
+      icon: PaperPlaneTilt,
+      default: true
+    },
+    {
+      title: 'Block 2',
+      name: 'column2',
+      icon: List
+    },
+    {
+      title: 'Block 3',
+      name: 'column3',
+      icon: List
+    },
+    {
+      title: 'Block 4',
+      name: 'column4',
+      icon: GlobeSimple
+>>>>>>> original/main
+    }
+  ],
+  fields: [
+    {
+      title: 'Block Title',
+      name: 'blockTitle1',
+      type: 'string',
+<<<<<<< HEAD
+      fieldset: 'footerBlock1'
+=======
+      group: 'column1'
+>>>>>>> original/main
+    },
+    {
+      title: 'Newsletter',
+      name: 'newsletter',
+      type: 'newsletter',
+<<<<<<< HEAD
+      fieldset: 'footerBlock1'
+=======
+      group: 'column1'
+>>>>>>> original/main
+    },
+    {
+      title: 'Block Title',
+      name: 'blockTitle2',
+      type: 'string',
+<<<<<<< HEAD
+      fieldset: 'footerBlock2'
+=======
+      group: 'column2'
+>>>>>>> original/main
+    },
+    {
+      title: 'Block Menu',
+      name: 'blockMenu2',
+      type: 'reference',
+      to: [{ type: 'menu' }],
+<<<<<<< HEAD
+      fieldset: 'footerBlock2'
+=======
+      group: 'column2'
+>>>>>>> original/main
+    },
+    {
+      title: 'Block Title',
+      name: 'blockTitle3',
+      type: 'string',
+<<<<<<< HEAD
+      fieldset: 'footerBlock3'
+=======
+      group: 'column3'
+>>>>>>> original/main
+    },
+    {
+      title: 'Block Menu',
+      name: 'blockMenu3',
+      type: 'reference',
+      to: [{ type: 'menu' }],
+<<<<<<< HEAD
+      fieldset: 'footerBlock3'
+=======
+      group: 'column3'
+>>>>>>> original/main
+    },
+    {
+      title: 'Block Title',
+      name: 'blockTitle4',
+      type: 'string',
+<<<<<<< HEAD
+      fieldset: 'footerBlock4'
+=======
+      group: 'column4'
+>>>>>>> original/main
+    },
+    {
+      title: 'Social Links',
+      name: 'social',
+      type: 'array',
+      of: [{ type: 'socialLink' }],
+<<<<<<< HEAD
+      fieldset: 'footerBlock4'
+=======
+      group: 'column4'
+>>>>>>> original/main
+    }
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Footer Settings'
+      }
+    }
+  }
+}

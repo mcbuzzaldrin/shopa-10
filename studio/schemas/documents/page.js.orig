@@ -1,0 +1,106 @@
+import React from 'react'
+import { Browser } from 'phosphor-react'
+
+export default {
+  title: 'Page',
+  name: 'page',
+  type: 'document',
+  icon: () => <Browser />,
+<<<<<<< HEAD
+=======
+  groups: [
+    { title: 'Content', name: 'content', default: true },
+    { title: 'Settings', name: 'settings' }
+  ],
+>>>>>>> original/main
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+<<<<<<< HEAD
+      type: 'string'
+=======
+      type: 'string',
+      validation: Rule => Rule.required(),
+      group: 'settings'
+>>>>>>> original/main
+    },
+    {
+      title: 'URL Slug',
+      name: 'slug',
+      type: 'slug',
+      description: '(required)',
+      options: {
+        source: 'title',
+        maxLength: 96
+<<<<<<< HEAD
+      }
+=======
+      },
+      validation: Rule => Rule.required(),
+      group: 'settings'
+>>>>>>> original/main
+    },
+    {
+      title: 'Overlay header with transparency?',
+      name: 'hasTransparentHeader',
+      type: 'boolean',
+      description:
+        'When activated the header will overlay the first content module with a transparent background and white text until scrolling is engaged.',
+<<<<<<< HEAD
+      initialValue: false
+    },
+    {
+      title: 'Page Modules',
+=======
+      initialValue: false,
+      group: 'settings'
+    },
+    {
+      title: 'Page Content',
+>>>>>>> original/main
+      name: 'modules',
+      type: 'array',
+      of: [
+        { type: 'grid' },
+        { type: 'hero' },
+        { type: 'marquee' },
+<<<<<<< HEAD
+        { type: 'dividerPhoto' }
+      ]
+=======
+        { type: 'dividerPhoto' },
+        {
+          title: 'Reusable Section',
+          type: 'reference',
+          to: [{ type: 'section' }]
+        }
+      ],
+      group: 'content'
+>>>>>>> original/main
+    },
+    {
+      title: 'SEO / Share Settings',
+      name: 'seo',
+<<<<<<< HEAD
+      type: 'seo'
+=======
+      type: 'seo',
+      group: 'settings'
+>>>>>>> original/main
+    }
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      slug: 'slug'
+    },
+    prepare({ title = 'Untitled', slug = {} }) {
+      const path = `/${slug.current}`
+      return {
+        title,
+        subtitle: slug.current ? path : '(missing slug)'
+      }
+    }
+  }
+}
