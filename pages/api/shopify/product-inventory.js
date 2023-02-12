@@ -6,7 +6,8 @@ export default async function send(req, res) {
   } = req
 
   const hasShopify =
-    process.env.SHOPIFY_STORE_ID && process.env.SHOPIFY_API_PASSWORD
+    process.env.NEXT_PUBLIC_SHOPIFY_STORE_ID &&
+    process.env.SHOPIFY_ADMIN_API_TOKEN
 
   // Bail if no product ID was supplied
   if (!id) {
@@ -21,12 +22,12 @@ export default async function send(req, res) {
   // Setup our Shopify connection
   const shopifyConfig = {
     'Content-Type': 'application/json',
-    'X-Shopify-Access-Token': process.env.SHOPIFY_API_PASSWORD,
+    'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_API_TOKEN,
   }
 
   // Fetch our product from Shopify
   const shopifyProduct = await axios({
-    url: `https://${process.env.SHOPIFY_STORE_ID}.myshopify.com/admin/api/2021-01/products/${id}.json`,
+    url: `https://${process.env.NEXT_PUBLIC_SHOPIFY_STORE_ID}.myshopify.com/admin/api/2022-10/products/${id}.json`,
     method: 'GET',
     headers: shopifyConfig,
   })
@@ -51,7 +52,10 @@ export default async function send(req, res) {
   // construct our inventory object
   const product = {
     inStock: variants.some(
-      (v) => v.inventory_quantity > 0 || v.inventory_policy === 'continue'
+      (v) =>
+        v.inventory_quantity > 0 ||
+        v.inventory_policy === 'continue' ||
+        v.inventory_management === null
     ),
     lowStock:
       variants.reduce((a, b) => a + (b.inventory_quantity || 0), 0) <= 10,
@@ -59,7 +63,8 @@ export default async function send(req, res) {
       id: variant.id,
       inStock:
         variant.inventory_quantity > 0 ||
-        variant.inventory_policy === 'continue',
+        variant.inventory_policy === 'continue' ||
+        variant.inventory_management === null,
       lowStock: variant.inventory_quantity <= 5,
     })),
   }
