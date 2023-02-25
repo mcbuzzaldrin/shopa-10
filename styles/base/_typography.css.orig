@@ -1,0 +1,295 @@
+@tailwind base;
+
+@layer base {
+<<<<<<< HEAD
+=======
+  html {
+    @apply bg-pageText text-[10px];
+  }
+
+>>>>>>> original/main
+  html,
+  body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+<<<<<<< HEAD
+=======
+    -moz-osx-font-smoothing: grayscale;
+>>>>>>> original/main
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+<<<<<<< HEAD
+    @apply bg-pageBG text-pageText font-sans leading-none;
+  }
+
+  p {
+    @apply m-0 text-base leading-normal;
+=======
+    @apply bg-pageBG text-pageText font-sans leading-100;
+  }
+
+  p {
+    @apply m-0 text-16 leading-150;
+>>>>>>> original/main
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+
+  ul {
+    @apply list-none m-0 p-0;
+  }
+
+  /* Headlines */
+  h1,
+  .is-h1 {
+<<<<<<< HEAD
+    @apply m-0 text-5xl font-normal leading-tight;
+=======
+    @apply m-0 text-48 font-normal leading-125;
+>>>>>>> original/main
+  }
+
+  h2,
+  .is-h2 {
+<<<<<<< HEAD
+    @apply m-0 text-4xl font-normal leading-tight;
+=======
+    @apply m-0 text-36 font-normal leading-125;
+>>>>>>> original/main
+  }
+
+  h3,
+  .is-h3 {
+<<<<<<< HEAD
+    @apply m-0 text-3xl font-normal leading-tight;
+=======
+    @apply m-0 text-30 font-normal leading-125;
+>>>>>>> original/main
+  }
+
+  h4,
+  .is-h4 {
+<<<<<<< HEAD
+    @apply m-0 text-2xl font-normal leading-snug;
+  }
+
+  h5 {
+    @apply m-0 text-xl font-normal leading-tight;
+  }
+
+  h6 {
+    @apply m-0 text-xs font-normal leading-tight;
+=======
+    @apply m-0 text-24 font-normal leading-135;
+  }
+
+  h5 {
+    @apply m-0 text-20 font-normal leading-125;
+  }
+
+  h6 {
+    @apply m-0 text-12 font-normal leading-125;
+>>>>>>> original/main
+  }
+
+  /* Links */
+  a {
+    @apply no-underline text-current;
+  }
+
+  button {
+    @apply clean-btn;
+  }
+
+  /* Images */
+  figure {
+    @apply relative m-0;
+  }
+
+  /* Misc. */
+  hr {
+<<<<<<< HEAD
+    @apply my-16 mx-0 border-0 h-px bg-pageText;
+  }
+  
+  ::-moz-selection {
+    background: var(--pageText);
+    color: var(--pageBG);
+  }
+  ::selection {
+    background: var(--pageText);
+    color: var(--pageBG);
+=======
+    @apply my-60 mx-0 border-0 h-1 bg-pageText;
+  }
+  
+  ::-moz-selection {
+    @apply bg-pageText text-pageBG;
+  }
+  ::selection {
+    @apply bg-pageText text-pageBG;
+>>>>>>> original/main
+  }
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+/* Focus Adjust */
+a,
+button,
+input,
+textarea,
+select,
+details {
+  &:focus {
+    outline: 1px dashed var(--pageText);
+    outline-offset: 2px;
+
+    .is-inverted & {
+      outline-color: var(--pageBG);
+    }
+    
+    body:not(.is-tabbing) & {
+      outline: none;
+    }
+  }
+}
+
+p {
+  &:not(:last-child) {
+<<<<<<< HEAD
+    @apply mb-6;
+=======
+    @apply mb-24;
+>>>>>>> original/main
+  }
+}
+
+ul {
+  .rc & {
+<<<<<<< HEAD
+    @apply pl-8 text-base leading-normal;
+=======
+    @apply pl-8 text-16 leading-150;
+>>>>>>> original/main
+
+    &:not(:last-child) {
+      @apply mb-6;
+    }
+    
+    li {
+      @apply mb-1;
+      
+      &::before {
+        content: "+";
+        @apply inline-block relative -ml-4 w-4;
+      }
+    }
+  }
+}
+
+h1,
+.is-h1 {
+  &:not(:last-child) {
+<<<<<<< HEAD
+    @apply mb-4;
+=======
+    @apply mb-16;
+>>>>>>> original/main
+  }
+
+  &.has-btn {
+    @apply flex flex-col items-start sm:flex-row sm:items-center;
+
+    .btn {
+      @apply mt-4 sm:mt-0 sm:ml-4;
+    }
+  }
+
+  .hero & {
+    font-size: clamp(
+<<<<<<< HEAD
+      2.25rem,
+      calc(1rem + 3.5vw),
+      5rem
+=======
+      4rem,
+      calc(1.5rem + 3.5vw),
+      15rem
+>>>>>>> original/main
+    )
+  }
+}
+
+h2,
+.is-h2 {
+  &:not(:last-child) {
+<<<<<<< HEAD
+    @apply mb-4;
+=======
+    @apply mb-16;
+>>>>>>> original/main
+  }
+}
+
+h3,
+.is-h3 {
+  &:not(:last-child) {
+<<<<<<< HEAD
+    @apply mb-4;
+=======
+    @apply mb-16;
+>>>>>>> original/main
+  }
+}
+
+h4,
+.is-h4 {
+  &:not(:last-child) {
+<<<<<<< HEAD
+    @apply mb-6;
+=======
+    @apply mb-24;
+>>>>>>> original/main
+  }
+}
+
+a {
+  .rc & {
+    &:not(.btn) {
+      @apply hover:opacity-40;
+      background-image: linear-gradient(var(--pageText), var(--pageText));
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+    }
+  }
+}
+
+figure {
+  .rc & {
+    &:not(:last-child) {
+<<<<<<< HEAD
+      @apply mb-6;
+=======
+      @apply mb-24;
+>>>>>>> original/main
+    }
+  }
+}
+
+hr {
+  &:last-child {
+    @apply mb-0;
+  }
+}

@@ -1,0 +1,71 @@
+.footer {
+  @apply relative overflow-hidden;
+  
+  &--grid {
+<<<<<<< HEAD
+    @apply grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-pageText;
+  }
+
+  &--block {
+    @apply flex flex-col p-8 md:p-8 bg-pageBG text-center lg:text-left;
+=======
+    @apply grid sm:grid-cols-2 lg:grid-cols-4 gap-1 bg-pageText;
+  }
+
+  &--block {
+    @apply flex flex-col p-32 bg-pageBG text-center lg:text-left;
+>>>>>>> original/main
+  }
+
+  .form {
+    @apply mt-auto;
+  }
+
+  .menu-footer {
+<<<<<<< HEAD
+    @apply flex flex-col lg:mb-8;
+
+    a {
+      @apply inline-block py-2 hover:opacity-40;
+=======
+    @apply flex flex-col lg:mb-32;
+
+    a {
+      @apply inline-block py-8 text-16 hover:opacity-40;
+>>>>>>> original/main
+    }
+  }
+
+  .menu-social {
+<<<<<<< HEAD
+    @apply inline-flex flex-wrap my-4 mx-auto lg:mt-0 lg:mx-0;
+
+    a {
+      @apply block w-8 h-8 hover:opacity-40;
+=======
+    @apply inline-flex flex-wrap my-16 mx-auto lg:mt-0 lg:mx-0;
+
+    a {
+      @apply block w-36 h-36 hover:opacity-40;
+>>>>>>> original/main
+
+      svg {
+        @apply block w-full h-full;
+      }
+    }
+  }
+
+  &--extras {
+    @apply mt-auto;
+  }
+
+  &--disclaimer {
+    p {
+<<<<<<< HEAD
+      @apply text-sm;
+=======
+      @apply text-14;
+>>>>>>> original/main
+    }
+  }
+}

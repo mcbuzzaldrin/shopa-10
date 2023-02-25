@@ -1,0 +1,225 @@
+.form {
+  @apply relative;
+  
+  &--error {
+    /* Error Message styles */
+<<<<<<< HEAD
+    @apply bg-pageBG border p-4 md:p-4 text-center;
+=======
+    @apply bg-pageBG border p-16 text-center;
+>>>>>>> original/main
+
+    &-reset {
+      @apply mt-2;
+    }
+  }
+  
+  &--success {
+    /* Success Message styles */
+<<<<<<< HEAD
+    @apply bg-pageBG border p-4 md:p-4 text-center;
+=======
+    @apply bg-pageBG border p-16 text-center;
+>>>>>>> original/main
+  }
+}
+
+.control {
+  @apply flex flex-col relative text-left;
+
+  &--group {
+<<<<<<< HEAD
+    @apply grid gap-y-2 grid-cols-1 sm:grid-cols-2;
+=======
+    @apply grid gap-y-8 grid-cols-1 sm:grid-cols-2;
+>>>>>>> original/main
+
+    &.is-inline {
+      @apply sm:flex;
+
+      .control {
+        @apply sm:flex-1 m-0 border rounded-full bg-pageBG;
+      }
+
+      .btn {
+<<<<<<< HEAD
+        @apply sm:ml-4 sm:w-auto;
+
+        &.is-text {
+          @apply border-pageText py-2 sm:border-transparent sm:py-1;
+=======
+        @apply sm:ml-16 sm:w-auto;
+
+        &.is-text {
+          @apply border-pageText py-8 sm:border-transparent sm:py-4;
+>>>>>>> original/main
+        }
+      }
+    }
+
+    &.is-clean {
+<<<<<<< HEAD
+      @apply sm:items-center sm:border-b mb-4;
+=======
+      @apply sm:items-center sm:border-b mb-16;
+>>>>>>> original/main
+
+      .control {
+        @apply sm:border-0;
+        
+        &--label,
+        input {
+          @apply sm:px-0;
+        }
+
+        &--error {
+          @apply sm:left-0 sm:transform-none;
+        }
+      }
+    }
+  }
+
+  &--label {
+<<<<<<< HEAD
+    @apply absolute top-1/2 -translate-y-1/2 left-0 px-4 py-2;
+=======
+    @apply absolute top-1/2 -translate-y-1/2 left-0 px-16 py-8 text-16 leading-100;
+>>>>>>> original/main
+
+    .is-filled & {
+      @apply hidden;
+    }
+
+    &.for-textarea {
+      @apply top-0 transform-none;
+    }
+
+    &.for-checkbox {
+      @apply transform-none inline-flex relative top-auto left-auto p-0 cursor-pointer;
+
+      svg {
+<<<<<<< HEAD
+        @apply block flex-none mr-4 p-1 pointer-events-none border border-current transition-colors;
+        width: 20px;
+        height: 20px;
+=======
+        @apply block flex-none mr-16 p-4 w-20 h-20 pointer-events-none border border-current transition-colors;
+>>>>>>> original/main
+        transition-delay: .15s;
+
+        input:checked + & {
+          @apply bg-pageText;
+          transition-delay: 0s;
+        }
+
+        path {
+          @apply stroke-current text-pageBG transition-all;
+          stroke-dashoffset: 120px;
+          stroke-dasharray: 120px;
+          transition-delay: 0s;
+
+          input:checked + & {
+            stroke-dashoffset: 0;
+            transition-delay: .15s;
+          }
+        }
+      }
+
+      .rc {
+        @apply flex flex-col justify-center m-0 select-none;
+
+        p {
+<<<<<<< HEAD
+          @apply text-xs;
+=======
+          @apply text-12;
+>>>>>>> original/main
+        }
+      }
+    }
+  }
+
+  &--error {
+<<<<<<< HEAD
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 translate-y-1/2 px-2 rounded-full bg-pageText text-pageBG text-xs leading-normal font-semibold;
+=======
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 translate-y-1/2 px-8 rounded-full bg-pageText text-pageBG text-12 leading-150 font-semibold;
+>>>>>>> original/main
+  }
+
+  &--pot {
+    @apply hidden;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  textarea {
+<<<<<<< HEAD
+    @apply relative appearance-none w-full h-full px-4 py-2 rounded-none border font-inherit text-base leading-none bg-transparent text-pageText;
+=======
+    @apply relative appearance-none w-full h-full px-16 py-8 rounded-none border font-inherit text-16 leading-100 bg-transparent text-pageText;
+>>>>>>> original/main
+
+    .is-inline & {
+      @apply border-0;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      @apply bg-transparent text-pageText;
+      -webkit-text-fill-color: var(--pageText);
+      -webkit-box-shadow: 0 0 0 100em var(--pageBG) inset;
+    }
+  }
+
+  input[type="checkbox"] {
+    @apply sr-only;
+
+    &:focus {
+      + label {
+        outline: 1px dashed var(--pageText);
+        outline-offset: 2px;
+
+        .is-inverted & {
+          outline-color: var(--pageBG);
+        }
+        
+        body:not(.is-tabbing) & {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  textarea {
+<<<<<<< HEAD
+    @apply max-w-full;
+    min-height: 5rem;
+=======
+    @apply max-w-full min-h-[5rem];
+>>>>>>> original/main
+  }
+
+  &.has-error {
+    input,
+    textarea {
+      /* Form Control Error styles */
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  @apply text-pageText;
+}
+::-moz-placeholder {
+  @apply text-pageText;
+}
+:-ms-input-placeholder {
+  @apply text-pageText;
+}
+:-moz-placeholder {
+  @apply text-pageText;
+}

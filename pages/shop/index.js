@@ -24,8 +24,7 @@ const Shop = ({ data }) => {
         <Module
           key={key}
           index={key}
-          module={module}
-          collectionProducts={page.products}
+          data={{ ...module, products: page.products }}
         />
       ))}
     </Layout>
@@ -35,15 +34,18 @@ const Shop = ({ data }) => {
 export async function getStaticProps({ preview, previewData }) {
   const shopData = await getStaticPage(
     `
-    *[_type == "collection" && _id == ${
-      queries.shopID
-    }] | order(_updatedAt desc)[0]{
+    *[_type == "collection" && _id == ${queries.shopID}] | order(_updatedAt desc)[0]{
+      "id": _id,
+      hasTransparentHeader,
       modules[]{
-        ${queries.modules}
+        defined(_ref) => { ...@->content[0] {
+          ${queries.modules}
+        }},
+        !defined(_ref) => {
+          ${queries.modules},
+        }
       },
-      products[wasDeleted != true && isDraft != true${
-        preview?.active ? ' && _id in path("drafts.**")' : ''
-      }]->${queries.product},
+      products[wasDeleted != true && isDraft != true]->${queries.product},
       title,
       seo
     }

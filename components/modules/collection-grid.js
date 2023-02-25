@@ -35,7 +35,7 @@ const Collection = ({ data = {} }) => {
     hasPagination ? paginationLimit : products.length
   )
 
-  const filterGroups = filter.groups
+  const filterGroups = filter.groups ?? []
 
   const [currentParams, setCurrentParams] = useParams([
     {
@@ -44,7 +44,7 @@ const Collection = ({ data = {} }) => {
     },
     {
       name: 'sort',
-      value: sort?.options[0]?.slug,
+      value: sort?.options?.[0]?.slug,
     },
     ...filterGroups.map((g) => ({
       name: g.slug,
@@ -119,7 +119,7 @@ const Collection = ({ data = {} }) => {
     const newPage = Math.ceil(newCount / paginationLimit)
 
     setCurrentCount(newCount)
-    updateParams([{ name: 'page', value: `${newPage > 1 ? newPage : null}` }])
+    updateParams([{ name: 'page', value: newPage > 1 ? `${newPage}` : null }])
   }, [currentCount, orderedProducts, paginationLimit])
 
   // update pagination when the count or products change

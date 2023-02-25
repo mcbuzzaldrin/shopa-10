@@ -1,0 +1,337 @@
+.collection {
+  @apply border-b;
+  
+  &--tools {
+<<<<<<< HEAD
+    @apply sticky top-[var(--headerHeight)] z-10 flex justify-between bg-pageBG border-b;
+  }
+
+  &--content {
+    @apply relative z-0 overflow-hidden;
+  }
+  
+  &--grid {
+    @apply grid grid-cols-1 md:grid-cols-3 -m-px;
+=======
+    @apply sticky top-[var(--headerHeight)] z-2 flex justify-between bg-pageBG border-b;
+  }
+
+  &--content {
+    @apply relative z-1 overflow-hidden;
+  }
+  
+  &--grid {
+    @apply grid grid-cols-1 md:grid-cols-3 -m-1;
+>>>>>>> original/main
+
+    &.is-empty {
+      @apply grid-cols-1;
+    }
+  }
+
+  &--empty {
+<<<<<<< HEAD
+    @apply px-8 py-16 min-h-[35vh] text-center;
+
+    .filters-reset {
+      @apply mt-8;
+=======
+    @apply px-16 py-64 min-h-[35vh] text-center;
+
+    .filters-reset {
+      @apply mt-32;
+>>>>>>> original/main
+    }
+  }
+
+  &--pagination {
+<<<<<<< HEAD
+    @apply relative p-4 sm:py-8 text-center is-textured bg-pageBG border-t;
+  }
+
+  &--count {
+    @apply relative p-4 sm:py-8 text-center bg-pageBG border-t;
+  }
+
+  &--filter-actions {
+    @apply flex items-center px-2 sm:px-4;
+
+    .filters-toggle {
+      @apply clean-btn flex items-center relative p-4 bg-transparent text-sm leading-normal font-semibold uppercase;
+
+      &--count {
+        @apply w-6 h-6 ml-2 rounded-full bg-pageText text-pageBG text-xs leading-loose;
+=======
+    @apply relative p-16 sm:py-32 text-center is-textured bg-pageBG border-t;
+  }
+
+  &--count {
+    @apply relative p-16 sm:py-32 text-center bg-pageBG border-t;
+  }
+
+  &--filter-actions {
+    @apply flex items-center px-8 sm:px-16;
+
+    .filters-toggle {
+      @apply clean-btn flex items-center relative p-16 bg-transparent text-14 leading-150 font-semibold uppercase;
+
+      &--count {
+        @apply w-24 h-24 ml-8 rounded-full bg-pageText text-pageBG text-12 leading-[2];
+>>>>>>> original/main
+      }
+    }
+
+    .filters-reset {
+<<<<<<< HEAD
+      @apply hidden sm:block ml-2;
+=======
+      @apply hidden sm:block ml-8;
+>>>>>>> original/main
+    }
+  }
+
+  &--filter-chips {
+    @apply flex bg-pageText;
+
+    .accordion {
+      @apply border-0;
+
+      &--inner {
+        @apply max-w-none p-0 border-b border-pageText;
+      }
+    }
+  }
+}
+
+.collection-count {
+<<<<<<< HEAD
+  @apply hidden relative ml-2 leading-none;
+=======
+  @apply hidden relative ml-16 leading-100;
+>>>>>>> original/main
+  vertical-align: super;
+  font-size: .5em;
+
+  /* Only show product counts for the mega-nav */
+  .mega-nav & {
+    @apply inline-block;
+  }
+}
+
+.collection-sort {
+<<<<<<< HEAD
+  @apply flex ml-auto px-2 sm:px-4;
+=======
+  @apply flex ml-auto px-8 sm:px-16;
+>>>>>>> original/main
+
+  .listbox {
+    @apply flex;
+
+    &--btn {
+<<<<<<< HEAD
+      @apply p-4 text-sm leading-normal;
+=======
+      @apply p-16 text-14 leading-150;
+>>>>>>> original/main
+    }
+  }
+
+  &--title {
+<<<<<<< HEAD
+    @apply hidden sm:inline mr-2 font-semibold uppercase;
+=======
+    @apply hidden sm:inline mr-8 font-semibold uppercase;
+>>>>>>> original/main
+  }
+
+  &--icon {
+    @apply has-indicator;
+  }
+}
+
+.product-card {
+  @apply flex flex-col relative;
+
+  .collection &,
+  .marquee & {
+<<<<<<< HEAD
+    @apply p-8 m-[-0.5px] border;
+  }
+
+  &.is-inline {
+    @apply my-4;
+=======
+    @apply p-32 m-[-0.5px] border;
+  }
+
+  &.is-inline {
+    @apply my-16;
+>>>>>>> original/main
+  }
+
+  &--visuals {
+    @apply relative;
+  }
+<<<<<<< HEAD
+
+  &--thumb {
+    @apply z-0;
+  }
+=======
+>>>>>>> original/main
+  
+  &--photo {
+    @apply relative overflow-hidden;
+
+    .is-hover {
+<<<<<<< HEAD
+      @apply absolute inset-0 z-10 opacity-0 invisible transition-all;
+=======
+      @apply absolute inset-0 z-1 opacity-0 invisible transition-all;
+>>>>>>> original/main
+
+      .product-card:hover & {
+        @apply opacity-100 visible;
+      }
+    }
+  }
+
+  &--gallery {
+    @apply relative;
+
+    .carousel {
+      &--hud {
+<<<<<<< HEAD
+        @apply z-30;
+=======
+        @apply z-3;
+>>>>>>> original/main
+      }
+    }
+  }
+
+  &--details {
+    @apply text-center;
+
+    .product-card--visuals + & {
+<<<<<<< HEAD
+      @apply mt-4;
+=======
+      @apply mt-16;
+>>>>>>> original/main
+    }
+  }
+
+  &--title {
+    @apply m-0 !important;
+
+    .is-featured & {
+<<<<<<< HEAD
+      @apply text-base;
+    }
+
+    .is-inline & {
+      @apply text-2xl;
+    }
+
+    + .price {
+      @apply mt-2;
+=======
+      @apply text-16 font-semibold;
+    }
+
+    .is-inline & {
+      @apply text-24;
+    }
+
+    + .price {
+      @apply mt-8;
+>>>>>>> original/main
+    }
+  }
+
+  &--link {
+    @apply block no-underline text-current;
+
+    &::after {
+<<<<<<< HEAD
+      @apply block absolute inset-0 z-20;
+=======
+      @apply block absolute inset-0 z-2;
+>>>>>>> original/main
+      content: "";
+    }
+  }
+
+  &--option {
+<<<<<<< HEAD
+    @apply relative z-30 mt-4;
+=======
+    @apply relative z-3 mt-16;
+>>>>>>> original/main
+
+    .option {
+      @apply m-0 p-0 border-0;
+
+      &--values {
+        @apply mx-auto;
+      }
+    }
+  }
+
+  &--add {
+<<<<<<< HEAD
+    @apply absolute bottom-0 inset-x-0 z-30 text-center mx-4 mb-8 opacity-0 invisible translate-y-1/2 transition-all;
+=======
+    @apply absolute bottom-0 inset-x-0 z-3 text-center mx-16 mb-32 opacity-0 invisible translate-y-1/2 transition-all;
+>>>>>>> original/main
+    will-change: transform;
+
+    .product-card:hover & {
+      @apply opacity-100 visible translate-y-0;
+    }
+  }
+
+  .price {
+    @apply flex items-center justify-center;
+
+    &--current {
+<<<<<<< HEAD
+      @apply sm:text-base sm:leading-normal font-semibold;
+    }
+
+    &--discount {
+      @apply ml-2 p-1 rounded-sm bg-pageText text-pageBG text-xxs leading-tight tracking-widest font-semibold uppercase;
+=======
+      @apply sm:text-16 sm:leading-150 font-semibold;
+    }
+
+    &--discount {
+      @apply ml-8 px-6 py-4 rounded-md bg-pageText text-pageBG text-10 leading-125 tracking-widest font-semibold uppercase;
+>>>>>>> original/main
+    }
+  }
+}
+
+.product-featured {
+  @apply flex flex-col relative;
+
+  h2 {
+<<<<<<< HEAD
+    @apply mt-4 text-center text-base font-semibold transition-opacity duration-200;
+=======
+    @apply mt-4 text-center text-16 font-semibold transition-opacity duration-200;
+>>>>>>> original/main
+
+    .product-featured:hover & {
+        @apply opacity-100 visible;
+      }
+  }
+
+  &:hover {
+    h2 {
+      @apply opacity-40;
+    }
+  }
+}

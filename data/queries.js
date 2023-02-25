@@ -70,7 +70,9 @@ export const product = `
     title,
     price,
     comparePrice,
-    description,
+    description[]{
+      ${ptContent}
+    },
     "photos": {
       "main": galleryPhotos[]{
         forOption,
@@ -383,8 +385,6 @@ export const site = `
 `
 
 // All Products
-export const allProducts = (preview) => `
-  *[_type == "product" && wasDeleted != true && isDraft != true${
-    preview?.active ? ' && _id in path("drafts.**")' : ''
-  }]${product} | order(title asc)
+export const allProducts = `
+  *[_type == "product" && wasDeleted != true && isDraft != true]${product} | order(title asc)
 `
