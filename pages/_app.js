@@ -102,6 +102,7 @@ const Site = ({ Component, pageProps, router }) => {
       </AnimatePresence>
 
       <Cart data={{ ...data?.site }} />
+      <Analytics/>
     </LazyMotion>
   )
 }
@@ -115,7 +116,7 @@ const MyApp = ({ Component, pageProps, router }) => {
       <SiteContextProvider data={{ ...data?.site }}>
         <Site Component={Component} pageProps={pageProps} router={router} />
       </SiteContextProvider>
-      <Analytics/>
+      
     </ThemeProvider>
   )
 }
