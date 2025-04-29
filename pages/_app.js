@@ -6,6 +6,8 @@ import { LazyMotion, domAnimation, AnimatePresence } from 'framer-motion'
 import '../styles/tailwind.css'
 import '../styles/app.css'
 
+import { Analytics } from "@vercel/analytics/react"
+
 import { isBrowser, useScrollRestoration } from '@lib/helpers'
 import { pageTransitionSpeed } from '@lib/animate'
 
@@ -113,6 +115,7 @@ const MyApp = ({ Component, pageProps, router }) => {
       <SiteContextProvider data={{ ...data?.site }}>
         <Site Component={Component} pageProps={pageProps} router={router} />
       </SiteContextProvider>
+      <Analytics/>
     </ThemeProvider>
   )
 }
