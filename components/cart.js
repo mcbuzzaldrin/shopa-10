@@ -4,7 +4,6 @@ import { m } from 'framer-motion'
 import cx from 'classnames'
 
 import { centsToPrice } from '@lib/helpers'
-
 import {
   useSiteContext,
   useCartTotals,
@@ -13,12 +12,10 @@ import {
   useCheckout,
   useToggleCart,
 } from '@lib/context'
-
 import CartItem from '@components/cart-item'
 
 const Cart = ({ data }) => {
   const { shop } = data
-
   if (!shop) return null
 
   const { isCartOpen, isUpdating } = useSiteContext()
@@ -32,18 +29,13 @@ const Cart = ({ data }) => {
   const [checkoutLink, setCheckoutLink] = useState(checkoutURL)
 
   const handleKeyDown = (e) => {
-    if (e.which === 27) {
-      toggleCart(false)
-    }
+    if (e.which === 27) toggleCart(false)
   }
 
   const goToCheckout = (e) => {
     e.preventDefault()
     toggleCart(false)
-
-    setTimeout(() => {
-      window.open(checkoutLink, '_self')
-    }, 200)
+    setTimeout(() => window.open(checkoutLink, '_self'), 200)
   }
 
   // update our checkout URL to use our custom domain name
@@ -57,7 +49,7 @@ const Cart = ({ data }) => {
         : checkoutURL
       setCheckoutLink(buildCheckoutLink)
     }
-  }, [checkoutURL])
+  }, [checkoutURL, shop.storeURL])
 
   return (
     <>
@@ -68,16 +60,9 @@ const Cart = ({ data }) => {
         <m.div
           initial="hide"
           animate={isCartOpen ? 'show' : 'hide'}
-          variants={{
-            show: {
-              x: '0%',
-            },
-            hide: {
-              x: '100%',
-            },
-          }}
+          variants={{ show: { x: '0%' }, hide: { x: '100%' } }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          onKeyDown={(e) => handleKeyDown(e)}
+          onKeyDown={handleKeyDown}
           onAnimationComplete={(v) => setHasFocus(v === 'show')}
           className={cx('cart is-inverted', {
             'is-active': isCartOpen,
@@ -111,7 +96,7 @@ const Cart = ({ data }) => {
 
                 <a
                   href={checkoutLink}
-                  onClick={(e) => goToCheckout(e)}
+                  onClick={goToCheckout}
                   className="btn is-primary is-inverted is-large is-block"
                 >
                   {isUpdating ? 'Updating...' : 'Checkout'}
@@ -127,24 +112,21 @@ const Cart = ({ data }) => {
       </FocusTrap>
 
       <div
-        className={cx('cart--backdrop', {
-          'is-active': isCartOpen,
-        })}
+        className={cx('cart--backdrop', { 'is-active': isCartOpen })}
         onClick={() => toggleCart(false)}
       />
     </>
   )
 }
 
-const CartItems = ({ items }) => {
-  return (
-    <div className="cart--items">
-      {items.map((item) => {
-        return <CartItem key={item.id} item={item} />
-      })}
-    </div>
-  )
-}
+// Newly re-added helper components:
+const CartItems = ({ items }) => (
+  <div className="cart--items">
+    {items.map((item) => (
+      <CartItem key={item.lineID} item={item} />
+    ))}
+  </div>
+)
 
 const EmptyCart = () => (
   <div className="cart--empty">
